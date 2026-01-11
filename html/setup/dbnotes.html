@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>HILS Database Security Notes</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="container">
+    <h1>Security of HILS.</h1>
+    <h2><abbr title="Home Intergrated Library System">HILS</abbr> is for at home only</h2>
+    <p>HILS is intended to be used at home, on private networks. It is <strong>NOT</strong> intended to be exposed to the internet. This is because there are some security compromises to aid development and make it as user friendly as possible.</p>
+    <p class="text-warning">Please <strong>do not</strong> expose HILS to the internet. It is <strong>NOT</strong> designed to be and may expose your network to adversaries.</p>
+    <h3>Why are there compromises?</h3>
+    <p>I am not a professional developer and do not intend to become one. HILS is a hobby project and as a result, I don't want to spend my time patching up endless security exploits. I've taken some basic, reasonable, steps to keep this secure, but you are on your own and I offer no guarantees of security.</p>
+    <h2>The SQLite3 Database File</h2>
+    <p>The HILS database is a SQLite3 database, stored on your local server. <strong>It is not encyrpted in any way.</strong></p>
+    <p>Anyone can access it and change it if they can access the file or your server.</p>
+    <p>You, and you alone, are responsible for keeping it safe.</p>
+    <h2>Password Hasing</h2>
+    <p>HILS will hash passwords according to whatever the PHP default is. Unless you have changed something, it is probably <code>bcrypt</code>. No salting or any other fancy things are done to the passwords in the database. This is because HILS is intended for internal, at home use and is <strong>not</strong> intended to be exposed to the internet.</p>
+    <hr />
+    <p>Thank you for reading this notice.</p>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

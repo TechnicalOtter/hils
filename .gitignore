@@ -1,0 +1,18 @@
+# Ignore Database Dir
+database/
+
+
+# Ignore setup complete flag
+html/setup-compete
+
+# Config File
+html/config.php
+# Setup Complete
+html/setup-complete
+
+# My holding folder for scratch tests
+resources/
+
+# VS Code counter
+.VSCodeCounter/
+
