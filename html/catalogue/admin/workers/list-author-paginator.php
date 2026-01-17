@@ -1,5 +1,5 @@
 <?php
-// This is for the future. I want to do pagination but scope.
+// This will treat 0 and 1 for $_GET['page'] the same...
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/util/setup-test.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/util/session.php");
@@ -14,12 +14,11 @@ try {
   }
   else
   {
-    $page = 1;
+    $page = 0;
   }
 
   $limit = 9;  // limit to 10 authors
   $offset = ($page - 1) * $limit;
-
   $database = new PDO($dsn);
   $sql = $database->prepare("SELECT author_id, name FROM authors ORDER BY 'name' ASC LIMIT :limit OFFSET :offset");
   $sql->bindParam(':limit', $limit, SQLITE3_NUM);
