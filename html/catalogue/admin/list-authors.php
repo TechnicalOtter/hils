@@ -51,6 +51,7 @@ try {
     <h1>List Authors</h1>
     <div id="data-error-alert" class="alert alert-danger hidden" role="alert"><strong>Something is very wrong with the data recieved from the server.</strong>.<br /> You can check the console for more details.</div>
     <p class="text-info">Authors in database: <?php echo $author_count; ?> </p>
+    <a type="button" class="btn btn-primary" href="/catalogue/admin/add-author.php">Add Author</a>
     <table class="table table-striped">
       <thead>
         <tr>
