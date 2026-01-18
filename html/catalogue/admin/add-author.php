@@ -89,7 +89,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/database.php");
 
     function updateParent()
     {
-      
+      <?php if(!isset($returnedAuthor['author_id'])){ $returnedAuthor['author_id'] = 0; $returnedAuthor['name'] = "Unknown";} ?>
       window.opener.updateAuthors(<?php echo htmlspecialchars($returnedAuthor['author_id']); ?>,"<?php echo htmlspecialchars($returnedAuthor['name']);?>");
     }
   </script>
