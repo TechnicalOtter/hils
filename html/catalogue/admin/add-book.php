@@ -47,16 +47,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/database.php");
         <label for="book_author">Author</label>
         <div class="input-group">
           <select class="form-control" id="book_author" name="book_author">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <?php 
+            //select all authors from the DB and  write them as <options>
+            $database = new PDO($dsn);
+            $sql = $database->prepare("SELECT author_id, name FROM authors ORDER BY 'name' ASC");
+            $sql->execute();
+            $authors = $sql->fetchAll();
+            foreach ($authors as $author) {
+              echo "<option value='". $author['author_id'] ."'>" . $author['name'] . "</option>";
+            }
+            ?>
           </select>
           <span class="input-group-btn"><button type="button" class="btn btn-default" onclick="addAuthorBtn()">Add Author</button></span>
         </div>
       </div>
-
       <div class="form-group">
         <label for="book_location">Location</label>
         <div class="input-group">
@@ -81,7 +85,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/database.php");
 
       <div class="form-group">
         <label for="book_notes">Notes</label>
-        <p class="help-block">This is the little tags you find in big libraries that help you locate books on a shelf. You don't need them, but they can be helpful!</p>
+        <p class="help-block">You can put any notes about the book here.</p>
         <textarea name="book_notes" id="book_notes" class="form-control" rows="3" placeholder="A great book about Life, The Universe and Everything.""></textarea>
         </div>
       <button type=" submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Book</button>
