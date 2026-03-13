@@ -1,3 +1,12 @@
+# Notice about Agents.MD
+This project explicity rejects the use of AI agents to assist with or directly write any source code for this project. The use of them are forbidden in this project; if you are found to be using one, you will be removed from this project and barred permanently.
+
+We are using the [No Agents](https://codeberg.org/rossabaker/no-agents.md) agents files to tell these unconsential bots to go do one.
+
+That is why you see an `AGENTS.MD` file and `CLAUDE.md` file. Fuck them. They are made by assholes for assholes.
+
+Now for why you are here...
+
 # HILS
 Welcome to HILS - The "Home [Intergrated Library System](https://en.wikipedia.org/wiki/Integrated_library_system)".
 
